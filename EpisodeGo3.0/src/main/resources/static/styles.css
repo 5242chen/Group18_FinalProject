@@ -74,13 +74,13 @@ input[type="text"]:focus {
 
 /* 輸入框背景顏色*/
 input[type="text"]:-webkit-autofill {
-    background-color: #FFF5F5 !important; /* 覆蓋默認的淺藍色為淡粉色 */
-    -webkit-box-shadow: 0 0 0 1000px #FFF5F5 inset !important; /* 移除淺藍色陰影 */
+    background-color: #FFFFFF !important; /* 覆蓋默認的淺藍色為淡粉色 */
+    -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset !important; /* 移除淺藍色陰影 */
     color: #4e3d2c; /* 確保文字顏色清晰可見 */
 }
 
 input[type="text"]:-webkit-autofill:focus {
-    background-color: #FFF5F5 !important; /* 保持聚焦時背景一致 */
+    background-color: #FFFFFF !important; /* 保持聚焦時背景一致 */
     border-color: #FF9797; /* 聚焦邊框顏色 */
 }
 
@@ -111,5 +111,55 @@ input[type="text"]:-webkit-autofill:focus {
 .btn:active {
     background-color: #70422a; /* 點擊時背景色更深 */
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4); /* 添加按下去的內凹陰影效果 */
+}
+
+/* 搜尋結果*/
+/* 搜尋結果的框框樣式 */
+.results-box {
+    background-color: #FFF5F5; /* 背景設置為淡粉色 */
+    border: 2px solid #EA0000; /* 邊框設置為紅色 */
+    border-radius: 10px; /* 添加圓角效果 */
+    padding: 20px; /* 添加內邊距，讓內容與邊框保持距離 */
+    width: 80%; /* 設置結果框的寬度為頁面寬度的 80% */
+    max-width: 600px; /* 設置結果框的最大寬度 */
+    margin: 20px auto; /* 設置上下外邊距，並水平置中 */
+    text-align: center; /* 將內容置中 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+    overflow-y: auto; /* 當結果內容超出時添加滾動條 */
+    max-height: 300px; /* 限制結果框的最大高度 */
+	margin-top: -200px; /* 將輸入框上移 10 像素 */
+}
+
+/* 搜尋結果項目樣式 */
+/* 搜尋結果的框框樣式 */
+.results-box {
+	display: none; /* 初始狀態隱藏結果框 */
+    background-color: #FFFFFF; /* 背景設置為淡粉色 */
+    border: 2px solid #EA0000; /* 邊框設置為紅色 */
+    border-radius: 10px; /* 添加圓角效果 */
+    padding: 20px; /* 添加內邊距，讓內容與邊框保持距離 */
+    width: 80%; /* 設置結果框的寬度為頁面寬度的 80% */
+    max-width: 600px; /* 設置結果框的最大寬度 */
+    margin: 20px auto; /* 設置上下外邊距，並水平置中 */
+    text-align: center; /* 將內容置中 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+    overflow-y: auto; /* 當結果內容超出時添加滾動條 */
+    max-height: 300px; /* 限制結果框的最大高度 */
+}
+
+/* 搜尋結果項目樣式 */
+.result-item {
+    margin-bottom: 10px; /* 每個結果項目之間添加間距 */
+    font-size: 1em; /* 設置字體大小 */
+    color: #4e3d2c; /* 深棕色文字 */
+}
+
+.result-item a {
+    color: 	#613030; /* 超連結顏色設置為紅色 */
+    text-decoration: none; /* 移除超連結的下劃線 */
+}
+
+.result-item a:hover {
+    text-decoration: underline; /* 懸停時顯示下劃線 */
 }
 

@@ -1,11 +1,24 @@
 document.getElementById('search-form').addEventListener('submit', function(e) {
     e.preventDefault(); // 防止表單提交刷新頁面
-    const query = document.getElementById('query').value;
+    const query = document.getElementById('query').value.trim();
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = '<p>搜尋中...</p>';
+	
+    if (!query) {
+        alert('請輸入搜尋關鍵字！');
+        return;
+    }
+	
+	// 顯示結果框
+	resultsDiv.style.display = 'block';
+	resultsDiv.innerHTML = '<p>搜尋中...</p>';
 
     fetch(`/api/search?q=${encodeURIComponent(query)}`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`伺服器錯誤：${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             resultsDiv.innerHTML = '';
             if (Object.keys(data).length === 0) {
@@ -19,14 +32,11 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
                 const link = document.createElement('a');
                 link.href = url;
                 link.target = '_blank';
+                link.rel = 'noopener noreferrer'; // 安全性設置
                 link.textContent = title;
 
-                const urlDiv = document.createElement('div');
-                urlDiv.classList.add('result-url');
-                urlDiv.textContent = url;
-
+                // 只添加可點擊的標題，不再顯示 URL
                 itemDiv.appendChild(link);
-                itemDiv.appendChild(urlDiv);
                 resultsDiv.appendChild(itemDiv);
             }
         })
