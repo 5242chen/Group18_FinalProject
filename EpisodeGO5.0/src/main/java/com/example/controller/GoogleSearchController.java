@@ -69,7 +69,7 @@ public class GoogleSearchController {
             // 4. 檢查結果是否「全部分數都 <= 5 分」
             boolean allBelowOrEq5 = true;
             for (SearchResult sr : sortedList) {
-                if (sr.getScore() > 5) {
+                if (sr.getScore() > 3) {
                     allBelowOrEq5 = false;
                     break;
                 }
