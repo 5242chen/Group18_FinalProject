@@ -55,7 +55,7 @@ public class GoogleSearchController {
             // 3. 經過 SearchEngine 排序
             List<SearchResult> sortedList = searchEngine.searchAndSort(pages, query);
 
-            // 4. 檢查結果是否「全部都 <= 0 分」
+            // 4. 檢查結果是否「全部都 <= 5 分」
             boolean allZeroOrBelow = true;
             for (SearchResult sr : sortedList) {
                 if (sr.getScore() > 5) {
