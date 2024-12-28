@@ -14,9 +14,9 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
     // 顯示結果區域，並提示「搜尋中...」
     resultsDiv.style.display = 'block';
     resultsDiv.innerHTML = `
-        <p>搜尋中
+        <p>搜尋中...
         <br><br><br>
-            <img src="loading.gif" alt="Loading" style="width: 60px; height: 60px; vertical-align: middle;" />
+            <img src="loading.gif" alt="Loading" style="width: 20px; height: 20px; vertical-align: middle;" />
         </p>
     `;
 

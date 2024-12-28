@@ -147,6 +147,7 @@ input[type="text"]:-webkit-autofill:focus {
     max-height: 300px; /* 限制結果框的最大高度 */
 }
 
+
 /* 搜尋結果項目樣式 */
 .result-item {
     margin-bottom: 10px; /* 每個結果項目之間添加間距 */
